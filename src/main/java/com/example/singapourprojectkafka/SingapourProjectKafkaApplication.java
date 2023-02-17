@@ -9,7 +9,6 @@ public class SingapourProjectKafkaApplication {
 
     public static void main(String[] args) {
 
-
         SpringApplication.run(SingapourProjectKafkaApplication.class, args);
 
         KafkaConfig kak = new KafkaConfig();

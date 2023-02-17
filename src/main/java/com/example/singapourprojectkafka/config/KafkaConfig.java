@@ -45,7 +45,6 @@ public class KafkaConfig {
     public ConcurrentKafkaListenerContainerFactory
     concurrentKafkaListenerContainerFactory()
     {
-        System.out.println("debugggg");
         ConcurrentKafkaListenerContainerFactory<
                 String, String> factory
                 = new ConcurrentKafkaListenerContainerFactory<>();
