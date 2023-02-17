@@ -23,7 +23,7 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 public class KafkaConfigProducer {
     @Bean
     public NewTopic javaguidesTopic(){
-        return TopicBuilder.name("javaguides")
+        return TopicBuilder.name("record")
                 .build();
     }
 }
