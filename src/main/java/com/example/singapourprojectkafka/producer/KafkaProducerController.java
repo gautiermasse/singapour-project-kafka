@@ -21,4 +21,8 @@ public class KafkaProducerController {
         kafkaProducer.sendMessage(message);
         return ResponseEntity.ok("Message sent to kafka topic");
     }
+
+    // Set up key value message
+
+
 }
