@@ -18,9 +18,10 @@ public class KafkaProducerController {
     }
 
     @GetMapping("/publish")
-    public ResponseEntity<String> publish(@RequestParam("message") String message){
+    public ResponseEntity<String> publish(@RequestParam("message") String message,@RequestParam("topic") String topic,@RequestParam("key") String key,@RequestParam("value") String value){
 
-        ProducerRecord<String, String> record = new ProducerRecord<>("my-topic", "my-key", "Hello Kafka!");
+
+        ProducerRecord<String, String> record = new ProducerRecord<>(topic,key ,value );
 
         kafkaProducer.sendMessageKeyValue(record);
 
