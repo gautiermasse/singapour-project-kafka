@@ -29,6 +29,7 @@ public class KafkaConsumer {
         // Parse string to json
         String str = record.value();
 
+        // JSON
     }
 
 }
