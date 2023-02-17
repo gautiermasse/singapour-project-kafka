@@ -1,5 +1,6 @@
 package com.example.singapourprojectkafka.producer;
 
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,11 @@ public class KafkaProducerController {
 
     @GetMapping("/publish")
     public ResponseEntity<String> publish(@RequestParam("message") String message){
-        kafkaProducer.sendMessage(message);
+
+        ProducerRecord<String, String> record = new ProducerRecord<>("my-topic", "my-key", "Hello Kafka!");
+
+        kafkaProducer.sendMessageKeyValue(record);
+
         return ResponseEntity.ok("Message sent to kafka topic");
     }
 

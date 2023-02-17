@@ -1,5 +1,6 @@
 package com.example.singapourprojectkafka.producer;
 
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -20,5 +21,12 @@ public class KafkaProducer {
     public void sendMessage(String message){
         //LOGGER.info(String.format("Message sent -> %s", message));
         kafkaTemplate.send(AppConstants.TOPIC_NAME, message);
+
+    }
+
+    public void sendMessageKeyValue(ProducerRecord<String, String> message){
+        //LOGGER.info(String.format("Message sent -> %s", message));
+        //kafkaTemplate.send(AppConstants.TOPIC_NAME, message);
+        kafkaTemplate.send(message);
     }
 }
